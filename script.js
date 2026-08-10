@@ -8,14 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- 1. Mobile menu toggle ---------- */
   const menuToggle = document.getElementById('menuToggle');
   const navList = document.getElementById('navList');
+  const mainNav = navList.closest('nav');   // the .main-nav element
 
   const closeMenu = () => {
-    navList.classList.remove('open');
+    mainNav.classList.remove('open');
     menuToggle.setAttribute('aria-expanded', 'false');
   };
 
   const toggleMenu = () => {
-    const isOpen = navList.classList.toggle('open');
+    const isOpen = mainNav.classList.toggle('open');
     menuToggle.setAttribute('aria-expanded', String(isOpen));
   };
 
