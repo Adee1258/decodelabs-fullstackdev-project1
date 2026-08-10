@@ -231,6 +231,7 @@ textarea:focus-visible {
   transform: translateX(100%);
   transition: transform 0.3s ease;
   overflow-y: auto;
+  z-index: 490;
 }
 
 .main-nav.open {
