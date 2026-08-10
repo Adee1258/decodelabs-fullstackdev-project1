@@ -21,16 +21,6 @@
         <span class="logo-mark">&lt;/&gt;</span> DevStack
       </a>
 
-      <nav class="main-nav" aria-label="Primary navigation">
-        <ul class="nav-list" id="navList">
-          <li><a href="#home" class="nav-link active-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navList">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -38,6 +28,17 @@
       </button>
     </div>
   </header>
+
+  <!-- Nav sits OUTSIDE header so it is not clipped by header's stacking context -->
+  <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+    <ul class="nav-list" id="navList">
+      <li><a href="#home" class="nav-link active-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
 
   <main id="main-content">
 
@@ -153,23 +154,7 @@
     </section>
 
     <!-- ============ PROJECTS ============ -->
-    <section class="projects" id="projects">
-      <div class="section-inner">
-        <p class="section-eyebrow center">Work</p>
-        <h2 class="center">Featured builds</h2>
-
-        <div class="projects-grid" id="projectsGrid">
-
-          <!-- Card 1: Chat App -->
-          <article class="project-card">
-            <div class="project-thumb project-thumb--img">
-              <img src="https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&q=80&fit=crop" alt="Chat App preview" loading="lazy">
-            </div>
-            <div class="project-body">
-              <h3>Chat App</h3>
-              <p>Real-time chat application with multiple rooms, instant messaging, and a clean conversational UI.</p>
-              <div class="tags">
-                <span class="tag">HTML</span>
+?
                 <span class="tag">CSS</span>
                 <span class="tag">JavaScript</span>
                 <span class="tag">Node.js</span>

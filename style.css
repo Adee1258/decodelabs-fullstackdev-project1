@@ -4,7 +4,6 @@
    =========================================================== */
 
 :root {
-  /* --- 2025 palette (from project brief) --- */
   --mocha-mousse: #A5856F;
   --mocha-mousse-dark: #8a6d59;
   --ethereal-blue: #A0D4E0;
@@ -14,23 +13,19 @@
   --ink-soft: #5a5346;
   --white: #ffffff;
 
-  /* --- type --- */
   --font-display: 'Montserrat', sans-serif;
   --font-body: 'Open Sans', sans-serif;
 
-  /* --- fluid type scale via clamp() --- */
   --fs-h1: clamp(2rem, 5vw + 1rem, 3.5rem);
   --fs-h2: clamp(1.5rem, 3vw + 0.5rem, 2.25rem);
   --fs-h3: clamp(1.1rem, 1.5vw + 0.5rem, 1.35rem);
   --fs-body: clamp(1rem, 0.4vw + 0.9rem, 1.05rem);
 
-  /* --- layout --- */
   --max-width: 1200px;
   --radius: 14px;
   --header-h: 72px;
 }
 
-/* ---------- Reset ---------- */
 *,
 *::before,
 *::after {
@@ -84,7 +79,6 @@ button {
   cursor: pointer;
 }
 
-/* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -98,7 +92,6 @@ button {
   }
 }
 
-/* Visible keyboard focus (accessibility) */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -108,7 +101,6 @@ textarea:focus-visible {
   border-radius: 4px;
 }
 
-/* Skip link */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -124,7 +116,6 @@ textarea:focus-visible {
   left: 0;
 }
 
-/* ---------- Layout helpers ---------- */
 .section-inner {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -184,14 +175,26 @@ textarea:focus-visible {
   width: 100%;
 }
 
+.btn-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  user-select: none;
+}
+
+.btn-sm {
+  padding: 0.5em 1.1em;
+  font-size: 0.8rem;
+}
+
 /* ===========================================================
-   HEADER / NAV  (Flexbox — micro layout)
+   HEADER
    =========================================================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 500;
-  background: rgba(242, 240, 234, 0.9);
+  background: rgba(242, 240, 234, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(46, 42, 37, 0.08);
 }
@@ -213,6 +216,7 @@ textarea:focus-visible {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.15rem;
+  z-index: 501;
 }
 
 .logo-mark {
@@ -223,19 +227,26 @@ textarea:focus-visible {
   font-size: 0.85rem;
 }
 
-/* Mobile nav: hidden off-canvas, toggled via JS/checkbox-less button */
+/* ===========================================================
+   MOBILE NAV — fixed overlay, OUTSIDE header in HTML
+   so it is never clipped by header's stacking context
+   =========================================================== */
 .main-nav {
+  /* hidden by default on mobile */
+  display: none;
   position: fixed;
-  inset: var(--header-h) 0 0 0;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: var(--moonlit-grey);
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
   overflow-y: auto;
-  z-index: 490;
+  z-index: 9999;
+  /* above everything */
 }
 
 .main-nav.open {
-  transform: translateX(0);
+  display: block;
 }
 
 .nav-list {
@@ -251,6 +262,7 @@ textarea:focus-visible {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.1rem;
+  color: var(--ink);
   border-bottom: 1px solid rgba(46, 42, 37, 0.08);
   transition: color 0.2s ease;
 }
@@ -272,6 +284,8 @@ textarea:focus-visible {
   background: transparent;
   border: none;
   border-radius: 8px;
+  position: relative;
+  z-index: 501;
 }
 
 .menu-toggle .bar {
@@ -304,6 +318,7 @@ textarea:focus-visible {
   padding: 3rem 1.25rem;
   background: linear-gradient(180deg, var(--moonlit-grey) 0%, #ffffff 100%);
   overflow: hidden;
+  /* keeps blueprint grid clipped to hero only */
 }
 
 .blueprint-grid {
@@ -315,10 +330,12 @@ textarea:focus-visible {
   background-size: 40px 40px;
   mask-image: radial-gradient(circle at 70% 30%, black 0%, transparent 70%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .hero-content {
   position: relative;
+  z-index: 1;
   max-width: 760px;
   margin: 0 auto;
   text-align: center;
@@ -359,7 +376,7 @@ textarea:focus-visible {
 }
 
 /* ===========================================================
-   ABOUT  (Flexbox two-column, stacks on mobile)
+   ABOUT
    =========================================================== */
 .about-inner {
   display: flex;
@@ -388,7 +405,6 @@ textarea:focus-visible {
   box-shadow: 0 8px 32px rgba(160, 212, 224, 0.4), 0 0 0 4px var(--mocha-mousse);
 }
 
-/* Dev card variant — overrides the square frame */
 .about-frame--card {
   aspect-ratio: unset;
   background: var(--ink);
@@ -586,7 +602,7 @@ textarea:focus-visible {
 }
 
 /* ===========================================================
-   SKILLS  (CSS Grid — macro layout)
+   SKILLS
    =========================================================== */
 .skills {
   background: var(--moonlit-grey);
@@ -650,7 +666,7 @@ textarea:focus-visible {
 }
 
 /* ===========================================================
-   PROJECTS  (CSS Grid)
+   PROJECTS
    =========================================================== */
 .projects h2 {
   font-size: var(--fs-h2);
@@ -680,7 +696,6 @@ textarea:focus-visible {
   border-color: var(--ethereal-blue);
 }
 
-/* Cards hidden until "Show More" is clicked */
 .project-card--hidden {
   display: none;
 }
@@ -702,7 +717,6 @@ textarea:focus-visible {
   background: var(--moonlit-grey);
 }
 
-/* When thumb contains a real image */
 .project-thumb--img {
   padding: 0;
 }
@@ -754,7 +768,6 @@ textarea:focus-visible {
   color: var(--ink);
 }
 
-/* Project card action links row */
 .project-links {
   display: flex;
   flex-wrap: wrap;
@@ -762,21 +775,6 @@ textarea:focus-visible {
   margin-top: 0.75rem;
 }
 
-/* Disabled button style (non-clickable project links) */
-.btn-disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-  pointer-events: none;
-  user-select: none;
-}
-
-/* Small variant of .btn for use inside cards */
-.btn-sm {
-  padding: 0.5em 1.1em;
-  font-size: 0.8rem;
-}
-
-/* Show More / Show Less button wrapper */
 .projects-toggle-wrap {
   display: flex;
   justify-content: center;
@@ -784,7 +782,7 @@ textarea:focus-visible {
 }
 
 /* ===========================================================
-   CONTACT  (Flexbox stacked -> Grid two-column on desktop)
+   CONTACT
    =========================================================== */
 .contact {
   background: var(--ink);
@@ -899,18 +897,23 @@ textarea:focus-visible {
 }
 
 /* ===========================================================
-   MOBILE-FIRST BREAKPOINTS
-   Tablet: 768px | Desktop: 1024px
+   TABLET 768px+
    =========================================================== */
-
-/* ----- Tablet (min-width: 768px) ----- */
 @media (min-width: 768px) {
+
+  /* Nav becomes a normal inline flex row — reset all mobile styles */
   .main-nav {
-    position: static;
-    inset: auto;
-    transform: none;
-    background: transparent;
-    overflow: visible;
+    display: flex !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    background: transparent !important;
+    overflow: visible !important;
+    z-index: auto !important;
+    height: auto !important;
+    align-items: center;
   }
 
   .nav-list {
@@ -927,6 +930,11 @@ textarea:focus-visible {
 
   .menu-toggle {
     display: none;
+  }
+
+  /* Move nav back inside header visually — header-inner needs to show it */
+  .header-inner {
+    justify-content: space-between;
   }
 
   .hero-content {
@@ -987,7 +995,9 @@ textarea:focus-visible {
   }
 }
 
-/* ----- Desktop (min-width: 1024px) ----- */
+/* ===========================================================
+   DESKTOP 1024px+
+   =========================================================== */
 @media (min-width: 1024px) {
   .skills-grid {
     grid-template-columns: repeat(4, 1fr);
