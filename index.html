@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevStack | Full Stack Intern Portfolio</title>
+  <meta name="description" content="Responsive frontend portfolio built with semantic HTML5, CSS Grid, Flexbox and vanilla JavaScript.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Skip link for keyboard / screen-reader accessibility -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="#home" class="logo" aria-label="DevStack home">
+        <span class="logo-mark">&lt;/&gt;</span> DevStack
+      </a>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul class="nav-list" id="navList">
+          <li><a href="#home" class="nav-link active-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navList">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="blueprint-grid" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Full&nbsp;Stack&nbsp;Development &middot; Project&nbsp;1</p>
+        <h1>Building responsive experiences,<br>one breakpoint at a time.</h1>
+        <p class="hero-sub">
+          A mobile-first frontend interface crafted with semantic HTML5, CSS Grid &amp; Flexbox,
+          and vanilla JavaScript &mdash; no frameworks, just fundamentals.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+      <div class="section-inner about-inner">
+        <div class="about-media">
+          <div class="about-frame about-frame--card">
+            <div class="dev-card">
+              <div class="dev-card__avatar">
+                <span class="dev-card__initials">AD</span>
+                <span class="dev-card__status-dot"></span>
+              </div>
+              <div class="dev-card__info">
+                <span class="dev-card__name">Adeel Dev</span>
+                <span class="dev-card__role">Full Stack Intern</span>
+              </div>
+              <div class="dev-card__code">
+                <span class="code-line"><span class="code-kw">const</span> stack = [</span>
+                <span class="code-line code-indent"><span class="code-str">"HTML5"</span>,</span>
+                <span class="code-line code-indent"><span class="code-str">"CSS3"</span>,</span>
+                <span class="code-line code-indent"><span class="code-str">"JavaScript"</span></span>
+                <span class="code-line">];</span>
+              </div>
+              <div class="dev-card__footer">
+                <span class="dev-pill">🟢 Open to Work</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-badges">
+            <span class="about-badge">👨‍💻 Full Stack</span>
+            <span class="about-badge">🚀 Intern Dev</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-eyebrow">About</p>
+          <h2>I design layouts that adapt, not break.</h2>
+          <p>
+            I'm an intern full-stack developer focused on the interface layer &mdash; the part users
+            actually touch. This project is proof that a clean, accessible, and truly responsive UI
+            doesn't need a framework to feel professional.
+          </p>
+          <ul class="about-points">
+            <li>Mobile-first CSS with fluid typography via <code>clamp()</code></li>
+            <li>Semantic landmarks for accessibility &amp; SEO</li>
+            <li>Progressive enhancement with lightweight JavaScript</li>
+            <li>8+ projects built from scratch, no frameworks</li>
+          </ul>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num">8+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">3</span>
+              <span class="stat-label">Core Skills</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Responsive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="skills" id="skills">
+      <div class="section-inner">
+        <p class="section-eyebrow center">Toolkit</p>
+        <h2 class="center">The raw materials</h2>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <span class="skill-icon" aria-hidden="true">🏗️</span>
+            <h3>HTML5</h3>
+            <p>Semantic landmarks &amp; structural meaning &mdash; the right element for the right job.</p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-icon" aria-hidden="true">🎨</span>
+            <h3>CSS3</h3>
+            <p>Responsive styling using Grid for macro layout and Flexbox for micro components.</p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-icon" aria-hidden="true">⚙️</span>
+            <h3>JavaScript</h3>
+            <p>Basic state management and interactive functionality without any framework.</p>
+          </article>
+          <article class="skill-card">
+            <span class="skill-icon" aria-hidden="true">📱</span>
+            <h3>Responsive Design</h3>
+            <p>Mobile-first breakpoints at 768px and 1024px, tested down to the smallest screen.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="projects" id="projects">
+      <div class="section-inner">
+        <p class="section-eyebrow center">Work</p>
+        <h2 class="center">Featured builds</h2>
+
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- Card 1: Chat App -->
+          <article class="project-card">
+            <div class="project-thumb project-thumb--img">
+              <img src="https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&q=80&fit=crop" alt="Chat App preview" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Chat App</h3>
+              <p>Real-time chat application with multiple rooms, instant messaging, and a clean conversational UI.</p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Node.js</span>
+              </div>
+              <div class="project-links">
+                <span class="btn btn-primary btn-sm btn-disabled" aria-disabled="true">Live Demo</span>
+                <span class="btn btn-outline btn-sm btn-disabled" aria-disabled="true">View Code</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: E-Commerce Website -->
+          <article class="project-card">
+            <div class="project-thumb project-thumb--img">
+              <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&q=80&fit=crop" alt="E-Commerce Website preview" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>E-Commerce Website</h3>
+              <p>Full-featured online store where users browse products, add items to cart, and complete checkout.</p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <span class="btn btn-primary btn-sm btn-disabled" aria-disabled="true">Live Demo</span>
+                <span class="btn btn-outline btn-sm btn-disabled" aria-disabled="true">View Code</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Social Media App -->
+          <article class="project-card">
+            <div class="project-thumb project-thumb--img">
+              <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80&fit=crop" alt="Social Media App preview" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Social Media App</h3>
+              <p>Social platform with user profiles, posts, likes, and a dynamic feed — built without any framework.</p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <span class="btn btn-primary btn-sm btn-disabled" aria-disabled="true">Live Demo</span>
+                <span class="btn btn-outline btn-sm btn-disabled" aria-disabled="true">View Code</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Marriage Hall Website -->
+          <article class="project-card">
+            <div class="project-thumb project-thumb--img">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80&fit=crop" alt="Marriage Hall Website preview" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Marriage Hall Website</h3>
+              <p>Showcase and booking website for a marriage/event venue with gallery, packages, and contact form.</p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <span class="btn btn-primary btn-sm btn-disabled" aria-disabled="true">Live Demo</span>
+                <span class="btn btn-outline btn-sm btn-disabled" aria-disabled="true">View Code</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Inventory App -->
+          <article class="project-card">
+            <div class="project-thumb project-thumb--img">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80&fit=crop" alt="Inventory App preview" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Inventory App</h3>
+              <p>Stock management system to add, update, and track inventory items with a searchable item list.</p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <span class="btn btn-primary btn-sm btn-disabled" aria-disabled="true">Live Demo</span>
+                <span class="btn btn-outline btn-sm btn-disabled" aria-disabled="true">View Code</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Zikriya Darbar -->
+          <article class="project-card">
+            <div class="project-thumb project-thumb--img">
+              <img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=600&q=80&fit=crop" alt="Zikriya Darbar website preview" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Zikriya Darbar</h3>
+              <p>Informational website for Zikriya Darbar featuring events, history, location, and a contact section.</p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <span class="btn btn-primary btn-sm btn-disabled" aria-disabled="true">Live Demo</span>
+                <span class="btn btn-outline btn-sm btn-disabled" aria-disabled="true">View Code</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 7: Calculator (hidden initially — shown via "Show More") -->
+          <article class="project-card project-card--hidden" aria-hidden="true">
+            <div class="project-thumb project-thumb--img">
+              <img src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=600&q=80&fit=crop" alt="Calculator preview" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Calculator</h3>
+              <p>Fully functional calculator supporting standard arithmetic operations with a clean, responsive layout.</p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <span class="btn btn-primary btn-sm btn-disabled" aria-disabled="true">Live Demo</span>
+                <span class="btn btn-outline btn-sm btn-disabled" aria-disabled="true">View Code</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 8: Portfolio Website (hidden initially — shown via "Show More") -->
+          <article class="project-card project-card--hidden" aria-hidden="true">
+            <div class="project-thumb project-thumb--img">
+              <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80&fit=crop" alt="Portfolio Website preview" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>Portfolio Website</h3>
+              <p>This responsive portfolio — built mobile-first with semantic HTML5, CSS Grid, Flexbox, and vanilla JS.</p>
+              <div class="tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive</span>
+              </div>
+              <div class="project-links">
+                <span class="btn btn-primary btn-sm btn-disabled" aria-disabled="true">Live Demo</span>
+                <span class="btn btn-outline btn-sm btn-disabled" aria-disabled="true">View Code</span>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /projects-grid -->
+
+        <!-- Show More / Show Less toggle -->
+        <div class="projects-toggle-wrap">
+          <button class="btn btn-outline" id="showMoreBtn" aria-expanded="false" aria-controls="projectsGrid">
+            Show More Projects
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="section-inner contact-inner">
+        <div class="contact-text">
+          <p class="section-eyebrow">Contact</p>
+          <h2>Let's build something.</h2>
+          <p>Have feedback on this project or want to collaborate? Send a message below.</p>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+            <span class="error-msg" id="nameError" role="alert"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <span class="error-msg" id="emailError" role="alert"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write your message..." required></textarea>
+            <span class="error-msg" id="messageError" role="alert"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary full-width">Send Message</button>
+          <p class="form-success" id="formSuccess" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="section-inner footer-inner">
+      <p>&copy; <span id="year"></span> DevStack &mdash; Project 1: Responsive Frontend Interface.</p>
+      <p class="footer-sub">Built with HTML5, CSS3 &amp; vanilla JavaScript. No frameworks.</p>
+      <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
